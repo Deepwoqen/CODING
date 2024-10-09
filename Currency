@@ -1,0 +1,24 @@
+# Currency converter program
+
+# -------------------------
+# Subprograms
+# -------------------------
+def exchange(gbp, currency):
+  if currency == "usd":
+    rate = 1.3
+  if currency == "euro":
+    rate = 1.11
+  if currency == "yuan":
+    rate = 8.92
+  if currency == "yen":
+    rate = 138.44
+  return rate * gbp
+
+# -------------------------
+# Main program
+# -------------------------
+
+gbp = int(input("how many gbp"))
+currency = input("which currency will you exchange for usd ,euro ,yuan or yen")
+money = exchange(gbp, currency)
+print(gbp, "GBP =", money, currency)
