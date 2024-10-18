@@ -1,0 +1,44 @@
+# Dungeon master program
+
+# -------------------------
+# Import libraries
+# -------------------------
+from random import *
+
+skill = -10
+# -------------------------
+# Subprograms
+# -------------------------
+# Function to return if a skill check is passed in DnD5e
+def check_skill(skill, modifier, dm_value):
+  if skill + modifier >= dm_value:
+    output = "autopass"
+    return output
+  else:
+    roll = randint(1,20)
+    print("rolled",roll)
+    if roll == 20:
+      output ="pass"
+      return output
+    else:
+      total = roll + skill + modifier
+      print("total is",total)
+      if total >= dm_value:
+        output = "pass"
+        return output
+      else:
+        output = "fail"
+        return output
+      
+    
+    
+
+# -------------------------
+# Main program
+# -------------------------
+while skill < 0:
+  skill = int(input("input a positive integer of skill"))
+modifier = int(input("input positive or negative modifier"))
+dm_value = int(input("input dm value"))
+result = check_skill(skill, modifier, dm_value)
+print(result)
