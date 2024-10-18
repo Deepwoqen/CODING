@@ -1,0 +1,28 @@
+# Cashpoint program
+
+# -------------------------
+# Subprograms
+# -------------------------
+def dispense(amount):
+    print("W" + str(amount))
+    while amount > 0:
+      if amount >= 20:
+        print("D20")
+        amount -= 20
+      elif amount >= 10:
+        print("D10")
+        amount -=10
+      elif amount >= 5:
+        print("D5")
+        amount -= 5
+      else:
+        print("error")
+        break
+        
+
+
+# -------------------------
+# Main program
+# -------------------------
+amount = int(input("how much money would you like to withdraw must be multiple of 5"))
+dispense(amount)
