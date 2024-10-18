@@ -1,0 +1,31 @@
+# PIN program
+pin = str(7528)
+count = 0
+tries = 3
+entry = False
+pinC = str(0)
+# -------------------------
+# Subprograms
+# -------------------------
+def get_pin(count,tries,pin,pinC):
+  while pinC != pin and count < tries:
+    pinC = input("input your pin")
+    if pinC == pin:
+      print("correct")
+    else:
+      print("incorrect")
+      count += 1
+      remaining = tries - count
+  if pinC != pin:
+    print("locked out")
+  else:
+    entry = True
+    return entry
+
+# -------------------------
+# Main program
+# -------------------------
+if get_pin(count,tries,pin,pinC) is True:
+  print("check passed")
+else:
+  print("failure")
