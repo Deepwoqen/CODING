@@ -1,0 +1,30 @@
+# Random name generator program
+
+# -------------------------
+# Import libraries
+# -------------------------
+import random
+import string
+name = ""
+# -------------------------
+# Subprograms
+# -------------------------
+# Function to return a random name
+def generate_name(name):
+  f_amount = random.randint(1,10)
+  s_amount = random.randint(1,10)
+  for i in range(0,f_amount):
+    randomLetter = random.choice(string.ascii_letters)
+    name += randomLetter
+  name += " "
+  for i in range(0,s_amount):
+    randomLetter = random.choice(string.ascii_letters)
+    name += randomLetter
+    
+  return name
+
+# -------------------------
+# Main program
+# -------------------------
+
+print(generate_name(name))
