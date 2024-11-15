@@ -1,0 +1,65 @@
+# Rock, paper, scisssors program
+
+# -------------------------
+# Import libraries
+# -------------------------
+import random as r
+choice = ""
+choice_list=["r","p","s"]
+change_list=["rock","paper","scissors"]
+# -------------------------
+# Subprograms
+# -------------------------
+def player_choice(choice):
+  while choice not in choice_list:
+    choice=input("to pick rock type r, paper type p, and scissors type s")
+  return choice
+  
+  
+def convert(rps):
+  for i in range(0,len(choice_list)):
+    if rps == choice_list[i]:
+      rps = change_list[i]
+      return rps
+  
+  
+  
+    
+    
+def who_won_that(player, cpu):
+  if player == cpu:
+    return "draw"
+  elif player == "r":
+    if cpu == "s":
+      return "player"
+    elif cpu == "p":
+      return "cpu"
+  elif player == "s":
+    if cpu == "r":
+      return "cpu"
+    elif cpu == "p":
+      return "player"
+  elif player == "p":
+    if cpu == "s":
+      return "cpu"
+    elif cpu == "r":
+      return "player"
+    
+  
+  
+  
+def cpu_choice():
+    cp_choice = r.randint(1,3)
+    cp_choice = choice_list[cp_choice - 1]
+    return cp_choice
+
+playerchoice = player_choice(choice)
+rps = playerchoice
+print("player:",convert(rps))
+rps=cpu_choice()
+print("cpu:",convert(rps))
+cpu = rps
+print(who_won_that(playerchoice,cpu))
+# -------------------------
+# Main program
+# -------------------------
